@@ -1,83 +1,74 @@
 #include"MySocket.h"
-using namespace std;
-MySocket::MySocket() {
+// 建立socket
+MySocket::MySocket(string http = "") :sHttp(http) {
 	// 调用WS2_32.dll
 	iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
-	// 值初始化
+	// 给hint填零
 	ZeroMemory(&hints, sizeof(hints));
+	// 返回类型:适用于指定主机名和服务名且适合任何协议族的地址
 	hints.ai_family = AF_UNSPEC;
+	// 提供面向连接的稳定数据传输，即TCP协议
 	hints.ai_socktype = SOCK_STREAM;
+	// 指定TCP协议
 	hints.ai_protocol = IPPROTO_TCP;
+	Connect();
 }
-void MySocket::Set(string http, string url) {
-	sUrl = url; sHttp = http;
-}
+// 获取服务器信息
 void MySocket::Connect() {
-	// 获取服务器ip,端口信息
 	iResult = getaddrinfo(sHttp.c_str(), DEFAULT_PORT, &hints, &result);
-	// 导入信息,连接
 	ptr = result;
 	ConnectSocket = socket(ptr->ai_family, ptr->ai_socktype, ptr->ai_protocol);
-	//连接服务器
 	iResult = connect(ConnectSocket, ptr->ai_addr, (int)ptr->ai_addrlen);
 	freeaddrinfo(result);
 }
-void MySocket::Send() {
-	char temp[10000];
-	strcpy_s(temp, 10000, upload.c_str());
-	sendbuf = temp;
+// 交换数据
+string MySocket::Exchange() {
+	int recvbuflen = DEFAULT_BUFLEN;
+	char recvbuf[DEFAULT_BUFLEN];
+	string ret;
 	//发送数据
-	iResult = send(ConnectSocket, upload.c_str(), (int)strlen(sendbuf), 0);
+	std::cout << upload << std::endl;
+	send(ConnectSocket, upload.c_str(), (int)upload.length(), 0);
 	//关闭连接
-	iResult = shutdown(ConnectSocket, SD_SEND);
+	shutdown(ConnectSocket, SD_SEND);
 	//接收数据
-	recData = "";
 	do {
 		iResult = recv(ConnectSocket, recvbuf, recvbuflen, 0);
 		if (iResult > 0) {
 			for (int i = 0; i < iResult; i++)
-				recData += recvbuf[i];
-		}
-		else if (iResult == 0)
-			;//连接关闭
-		else {
-			;//接收错误
+				ret += recvbuf[i];
 		}
 	} while (iResult > 0);
+	return ret;
 }
-string MySocket::Get() {
+// 构造请求
+string MySocket::Get(string page, string info) {
+	sPage = page;
+	upload = "GET " + sPage
+		+ "?" + info + " HTTP/1.1\r\n"
+		+ "Host: " + sHttp + "\r\n"
+		+ "Connection: Keep-Alive\r\n\r\n";
+	return ToGBK(Exchange());
+}
+string MySocket::Post(string page, string info) {
+	sPage = page;
 	upload = "";
-	upload = upload + "GET " + sUrl + " HTTP/1.1\r\nHost: " + sHttp + "\r\nConnection: Keep-Alive\r\n\r\n";
-	Connect();
-	Send();
-	return ToGBK(recData);
+	upload = upload + "POST "
+		+ sPage + " HTTP/1.1\r\n"
+		+ "Cache-Control: max-age=0\r\n"
+		+ "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n"
+		+ "Accept-Language: zh-Hans-CN,zh-Hans;q=0.5\r\n"
+		+ "Content-Type: application/x-www-form-urlencoded\r\n"
+		+ "Upgrade-Insecure-Requests: 1\r\n"
+		+ "Accept-Encoding: gzip, deflate\r\n"
+		+ "Host: " + sHttp + "\r\n"
+		+ "Content-Length: " + (char)(info.length() / 100 % 10 + '0') +(char) (info.length()/10%10+'0')+ (char)(info.length() % 10 + '0') +"\r\n"
+		+ "Connection: Keep-Alive\r\n\r\n"
+		+ info;
+	std::cout << info.length();
+	return ToGBK(Exchange());
 }
-string MySocket::Get(string info) {
-	upload = "GET " + sUrl + "?" + info + " HTTP/1.1\r\n" + "Host: " + sHttp + "\r\n" + "Connection: Keep-Alive\r\n\r\n";
-	Connect();
-	Send();
-	return ToGBK(recData);
-}
-string MySocket::GetChinese(string info) {
-	upload = "GET " + sUrl + "?" + info + " HTTP/1.1\r\n" + "Host: " + sHttp + "\r\n" + "Connection: Keep-Alive\r\n\r\n";
-	upload = ToUTF8(upload);
-	cout << upload;
-	Connect();
-	Send();
-	return ToGBK(recData);
-}
-string MySocket::Post(string info) {
-	upload = "";
-	upload = upload + "POST " + sUrl + " HTTP/1.1\r\nCache-Control: max-age=0\r\nAccept"
-		+ ": text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-"
-		+ "Language: zh-Hans-CN,zh-Hans;q=0.5\r\nContent-Type: application/x-www-"
-		+ "form-urlencoded\r\nUpgrade-Insecure-Requests: 1\r\nAccept-Encoding: "
-		+ "gzip, deflate\r\nHost: " + sHttp + "\r\nContent-Length: 78\r\nConnection:"
-		+ " Keep-Alive\r\n\r\n" + info;
-	Connect();
-	Send();
-	return ToGBK(recData);
-}
+// 转码
 string MySocket::ToGBK(const string& str) {
 	//CTRL+C FROM
 	//https://blog.csdn.net/zhangxueyang1/article/details/54178195
