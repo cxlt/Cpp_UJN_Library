@@ -1,11 +1,11 @@
 崔雨鸣
 mailto:cym2018.xyz@qq.com
-2019年4月13日14：50
+2019年4月14日20：18
 
-程序功能:
+# 程序功能:
   使用C++,Socket发送Get Post请求
 
-使用方法:
+# 使用方法:
     # 1.文件包含:  
 #include"Mysocket.h"
 
@@ -19,12 +19,12 @@ cout<<myObject.Get("页面地址","信息");
 cout<<myObject.Post("页面地址","信息");
 cout<<myObject.Get("/index.jsp","word=123");
 
-已知问题:
+# 已知问题:
   1.Get请求，无法发送中文
 
   2.无法处理302重定向
 
-其他信息:
+# 其他信息:
   大部分代码来自微软文档
   //https://docs.microsoft.com/zh-cn/windows/desktop/WinSock/windows-sockets-start-page-2
   utf-8,gbk转码部分代码来自csdn博客
