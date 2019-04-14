@@ -2,17 +2,20 @@
 //mailto:cym2018.xyz@qq.com
 # include <iostream>
 # include <fstream>
-# include "MySocket.h"
 # include <time.h>
+# include "MySocket.h"
 using namespace std;
 // 连接网络
 MySocket Library("seat.ujn.edu.cn");
 // 打开文件
 ifstream file;
 ofstream Log;
+string info;
+
 string getToken(string user, string pass);
 string getSeat(string token, string start, string end, string seat, string date);
-std::string getTime();
+string getTimes();
+string getTime();
 int main(int arc, char** arg) {
 	file.open("data.txt");
 	Log.open("log.txt", ios::app);
@@ -21,7 +24,7 @@ int main(int arc, char** arg) {
 	// 选座
 	while (!file.eof()) {
 		// 读取文件
-		file >> user >> pass >> seat >> start >> end;
+		file >>info>> user >> pass >> seat >> start >> end;
 		// 获取token
 		token=getToken(user, pass);
 		// 失败后隔一秒重试
@@ -50,11 +53,11 @@ string getToken(string user, string pass) {
 	// 查错
 	if (token.find("successs") > 0) {
 		token = token.erase(0, 289).erase(18);
-		Log << user + " " + pass + " " + token << endl;
+		Log << getTimes() +info+" " + token << endl;
 		return token;
 	}
 	else {
-		Log << user + " " + pass + " " + token << endl;
+		Log << getTimes()+info+" " + token << endl;
 		return "";
 	}
 }
@@ -63,15 +66,17 @@ string getSeat(string token, string start, string end, string seat, string date)
 	if (ret.find("success") > 0) {
 		ret = ret.erase(0, ret.find("message\"") + 10);
 		ret = ret.erase(ret.find("\""));
-		Log << ret << endl;
+		Log <<"\t"<< ret << endl;
 		return ret;
 	}
 	else {
-		Log << ret << endl;
+		Log << "\t" << ret << endl;
 		return "";
 	}
 }
-std::string getTime() {
+// CTRL + C FROM
+// https://blog.csdn.net/sylsjane/article/details/80868013
+string getTime() {
 	char tmp[64];
 	time_t timep;
 	time(&timep);
@@ -79,5 +84,14 @@ std::string getTime() {
 	tm a;
 	localtime_s(&a, &timep);
 	strftime(tmp, sizeof(tmp), "%Y-%m-%d", &a);
+	return tmp;
+}
+string getTimes() {
+	char tmp[64];
+	time_t timep;
+	time(&timep);
+	tm a;
+	localtime_s(&a, &timep);
+	strftime(tmp, sizeof(tmp), "%Y-%m-%d %H:%M:%S", &a);
 	return tmp;
 }
