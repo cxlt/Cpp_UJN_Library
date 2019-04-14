@@ -12,9 +12,9 @@ MySocket myObject("网址");//每个对象的网址在初始化时确定，不�
 `MySocket myObject("www.baidu.com")`
 
     # 3.发送请求,输出返回结果
-`cout<<myObject.Get("页面地址");//只获取页面内容,不提交表单
-`cout<<myObject.Get("页面地址","信息");
-`cout<<myObject.Post("页面地址","信息");
+`cout<<myObject.Get("页面地址");//只获取页面内容,不提交表单`
+`cout<<myObject.Get("页面地址","信息");`
+`cout<<myObject.Post("页面地址","信息");`
 `cout<<myObject.Get("/index.jsp","word=123");`
 
 # 已知问题:
