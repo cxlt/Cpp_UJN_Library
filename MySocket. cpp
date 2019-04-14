@@ -11,7 +11,6 @@ MySocket::MySocket(string http = "") :sHttp(http) {
 	hints.ai_socktype = SOCK_STREAM;
 	// 指定TCP协议
 	hints.ai_protocol = IPPROTO_TCP;
-	Connect();
 }
 // 获取服务器信息
 void MySocket::Connect() {
@@ -23,11 +22,11 @@ void MySocket::Connect() {
 }
 // 交换数据
 string MySocket::Exchange() {
+	Connect();
 	int recvbuflen = DEFAULT_BUFLEN;
 	char recvbuf[DEFAULT_BUFLEN];
 	string ret;
 	//发送数据
-	//std::cout << upload << std::endl;
 	send(ConnectSocket, upload.c_str(), (int)upload.length(), 0);
 	//关闭连接
 	shutdown(ConnectSocket, SD_SEND);
@@ -62,10 +61,9 @@ string MySocket::Post(string page, string info) {
 		+ "Upgrade-Insecure-Requests: 1\r\n"
 		+ "Accept-Encoding: gzip, deflate\r\n"
 		+ "Host: " + sHttp + "\r\n"
-		+ "Content-Length: " + (char)(info.length() / 100 % 10 + '0') +(char) (info.length()/10%10+'0')+ (char)(info.length() % 10 + '0') +"\r\n"
+		+ "Content-Length: " + (char)(info.length() / 100 % 10 + '0') + (char)(info.length() / 10 % 10 + '0') + (char)(info.length() % 10 + '0') + "\r\n"
 		+ "Connection: Keep-Alive\r\n\r\n"
 		+ info;
-	//std::cout << info.length();
 	return ToGBK(Exchange());
 }
 // 转码
