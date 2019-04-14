@@ -19,6 +19,8 @@ UJN_Library_Checkin.cpp用于济南大学图书馆签到
 
 UJN_Library_GetSeat.cpp用于济南大学图书馆预约
 
+# 运行条件
+
 程序运行需要读取文件目录下的"data.txt"
 文件格式如下:(N为第几个账号,1,2,3,4…)
 
