@@ -39,3 +39,7 @@ UJN_Library_GetSeat.cpp用于济南大学图书馆预约
 # 日志样例
 
 ![image](https://github.com/cym2018/Cpp_Socket/blob/master/app/log.jpg)
+
+# data.txt样例
+
+![image](https://github.com/cym2018/Cpp_Socket/blob/master/app/data.jpg)
