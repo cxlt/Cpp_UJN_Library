@@ -35,3 +35,7 @@ UJN_Library_GetSeat.cpp用于济南大学图书馆预约
 6N+5行:开始时间
 
 6N+6行:结束时间
+
+# 日志样例
+
+![image](https://github.com/cym2018/Cpp_Socket/blob/master/app/log.jpg)
