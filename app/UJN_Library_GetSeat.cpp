@@ -64,7 +64,7 @@ string getToken(string user, string pass) {
 string getSeat(string token, string start, string end, string seat, string date) {
 	string ret = Library.Post("/rest/v2/freeBook", (string)"token=" + token + "&startTime=" + start + "&endTime=" + end + "&seat=" + seat + "&date=" + date);
 	if (ret.find("success") > 0) {
-		ret = ret.erase(0, ret.find("message\"") + 10);
+		ret = ret.erase(0, ret.find("location\"") + 11);
 		ret = ret.erase(ret.find("\""));
 		Log <<"\t"<< ret << endl;
 		return ret;
