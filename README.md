@@ -1,41 +1,47 @@
-# Cpp_Socket
-Sent Post or Get Request by C++ Socket
-# 程序功能:
-  使用C++,Socket发送Get Post请求
+# 本项目用于济南大学图书馆预约和签到
+#### UJN_Library_Checkin.cpp 签到
+#### UJN_Library_GetSeat.cpp 预约
 
-# 使用方法:
-```C++
-#include"Mysocket.h"
-// 网址只在初始化时确定
-MySocket myObject("www.baidu.com");
-// 只获取页面内容,不提交表单
-cout<<myObject.Get("页面地址");
-// 使用Get方式提交表单
-cout<<myObject.Get("页面地址","表单内容");
-// 使用Post方式提交表单
-cout<<myObject.Post("页面地址","表单内容");
-// =浏览器访问www.baidu.com/index.jsp?word=123
-cout<<myObject.Get("/index.jsp","word=123");
-```
+####注意事项:
+  ~~外网签到需要在"MySocket.cpp/Post()/upload"添加"X-Forwarded-For: 10.167.146.62\r\n"~~
+  
+  ~~(+ "X-Forwarded-For: 10.167.146.62\r\n")~~
+  
+  ~~方法来源于:~~
+  
+  ~~//https://github.com/iozephyr/UJN-Lib-Seat-API~~
+  
+  ~~原issue链接:~~
+  
+  ~~//https://github.com/iozephyr/UJN-Lib-Seat-API/issues/17~~
+  
+  ~~(未经验证)~~
+  
+  外网签到功能经测试失效,可能服务器修改了验证方式.
 
-# 已知问题:
-  1.Get请求，无法发送中文
 
-  ~~2.无法处理302重定向~~（只用于发送请求所以应该不会完善这个功能）
-  
-  
 
-# 其他信息:
+#### 运行条件
 
-  大部分代码来自微软文档
-  
-  https://docs.microsoft.com/zh-cn/windows/desktop/WinSock/windows-sockets-start-page-2
-  
-  utf-8,gbk转码部分代码来自csdn博客
-  
-  https://blog.csdn.net/zhangxueyang1/article/details/54178195
-  
-  (自己写了get,post函数,顺便翻译注释)
-  
-崔雨鸣
-2019年4月15日20:04
+程序运行需要读取文件目录下的"data.txt"
+文件格式如下:(N为第几个账号,0,1,2,3,4…)
+
+6N+1行:注释
+
+6N+2行:学号
+
+6N+3行:密码
+
+6N+4行:座位代码
+
+6N+5行:开始时间
+
+6N+6行:结束时间
+
+#### 日志样例
+
+![image](https://github.com/cym2018/Cpp_Socket/blob/master/log.jpg)
+
+#### data.txt样例
+
+![image](https://github.com/cym2018/Cpp_Socket/blob/master/data.jpg)
