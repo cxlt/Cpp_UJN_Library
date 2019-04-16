@@ -5,7 +5,7 @@
 # include <time.h>
 # include "MySocket.h"
 enum timetype {
-	NX_yMd,yMdHms,Hms
+	NX_yMd, yMdHms, Hms
 };
 using namespace std;
 // 连接网络
@@ -15,16 +15,15 @@ using namespace std;
 MySocket Library("seat.ujn.edu.cn");
 ifstream file;
 ofstream Log;
-string info,getToken(string user, string pass),getSeat(string token, string start, string end, string seat, string date),getTime(timetype flag);
+string info, getToken(string user, string pass), getSeat(string token, string start, string end, string seat, string date), getTime(timetype flag);
 
 // 程序入口
 int main(int arc, char** arg) {
 	// 初始化
-	file.open("data.txt");Log.open("log.txt", ios::app);
-	string user, pass, seat, start, end, ret, token, date= getTime(NX_yMd);
+	file.open("data.txt"); Log.open("log.txt", ios::app);
+	string user, pass, seat, start, end, ret, token, date = getTime(NX_yMd);
 	// 记录程序开始时间
-	Log<<"Start At:" << getTime(yMdHms) << endl;
-	
+	Log << "Start At:" << getTime(yMdHms) << endl;
 	if (!file.is_open()) {
 		cout << "无法打开文件data.txt,该文件应该与程序在同一个目录下" << endl
 			<< "文件格式:\n1+6N:注释\n2+6N:学号\n3+6N:密码\n4+6N:座位号\n5+6N:开始时间\n6+6N:结束时间" << endl
@@ -33,7 +32,7 @@ int main(int arc, char** arg) {
 		Log << "End At:" << getTime(yMdHms) << endl;
 		return -1;
 	}
-	
+
 	// 选座
 	while (!file.eof()) {
 		// 读取文件
@@ -65,9 +64,9 @@ string getToken(string user, string pass) {
 	string token = Library.Get("/rest/auth", (string)"username=" + user + "&password=" + pass);
 	// 查错
 	//cout<<
-	if (token.find("success") <token.length()) {
+	if (token.find("success") < token.length()) {
 		token = token.erase(0, 289).erase(18);
-		Log <<"\t"<< getTime(Hms) + info + " " + token << endl;
+		Log << "\t" << getTime(Hms) + info + " " + token << endl;
 		return token;
 	}
 	else {
@@ -100,23 +99,24 @@ string getTime(timetype flag) {
 	time_t timep;
 	time(&timep);
 	tm a;
-	localtime_s(&a, &timep);
 	switch (flag) {
 	case NX_yMd:
 		// 获取下一天时间 yyyy - MM - dd
 		timep += 86400;
+		localtime_s(&a, &timep);
 		strftime(tmp, sizeof(tmp), "%Y-%m-%d", &a);
 		return tmp;
 	case yMdHms:
 		// 获取当前时间yyyy-MM-dd HH:mm:ss
+		localtime_s(&a, &timep);
 		strftime(tmp, sizeof(tmp), "%Y-%m-%d %H:%M:%S", &a);
 		return tmp;
 	case Hms:
 		// 获取当前时间HH-mm-ss
+		localtime_s(&a, &timep);
 		strftime(tmp, sizeof(tmp), "%H:%M:%S", &a);
 		return tmp;
 	}
 	cout << __LINE__ << "错误的传入参数" << endl;
 	return "";
 }
-
