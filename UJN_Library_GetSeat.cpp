@@ -1,5 +1,4 @@
 //崔雨鸣,2019年4月14日
-//mailto:cym2018.xyz@qq.com
 # include <iostream>
 # include <fstream>
 # include <time.h>
