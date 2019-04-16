@@ -40,8 +40,8 @@
 
 #### 日志样例
 
-![image](https://github.com/cym2018/Cpp_Socket/blob/master/log.jpg)
+![image](https://github.com/cym2018/Cpp_Socket/blob/master/app/log.jpg)
 
 #### data.txt样例
 
-![image](https://github.com/cym2018/Cpp_Socket/blob/master/data.jpg)
+![image](https://github.com/cym2018/Cpp_Socket/blob/master/app/data.jpg)
