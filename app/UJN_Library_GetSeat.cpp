@@ -94,7 +94,7 @@ string getSeat(string token, string start, string end, string seat, string date)
 		return ret;
 	}
 	else {
-		Log << "ERROR" << ret << endl;
+		Log << "\t\tERROR" << ret << endl;
 		return "";
 	}
 }
