@@ -88,6 +88,11 @@ string getSeat(string token, string start, string end, string seat, string date)
 		Log << "\t\t" << ret << endl;
 		return ret;
 	}
+	else if (ret.find("{")<ret.length()) {
+		ret = ret.erase(0, ret.find("{")).erase(ret.find("}") + 1);
+		Log << "\t\t" << ret << endl;
+		return ret;
+	}
 	else {
 		Log << "ERROR" << ret << endl;
 		return "";
