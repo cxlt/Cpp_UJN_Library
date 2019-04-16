@@ -1,8 +1,7 @@
 # 本项目用于济南大学图书馆预约和签到
-#### UJN_Library_Checkin.cpp 签到
-#### UJN_Library_GetSeat.cpp 预约
-
-####注意事项:
+## UJN_Library_Checkin.cpp 签到
+## UJN_Library_GetSeat.cpp 预约
+#### 注意事项:
   ~~外网签到需要在"MySocket.cpp/Post()/upload"添加"X-Forwarded-For: 10.167.146.62\r\n"~~
   
   ~~(+ "X-Forwarded-For: 10.167.146.62\r\n")~~
@@ -18,8 +17,6 @@
   ~~(未经验证)~~
   
   外网签到功能经测试失效,可能服务器修改了验证方式.
-
-
 
 #### 运行条件
 
