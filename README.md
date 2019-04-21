@@ -1,22 +1,26 @@
 # 本项目用于济南大学图书馆预约和签到
-## UJN_Library_Checkin.cpp 签到
-## UJN_Library_GetSeat.cpp 预约
+## app/checkin.exe 用于签到
+## app/library.exe 用于预约
+## 使用方式:
+#### <仅支持windows>
+
+下载app目录下的两个可执行文件.
+
+新建data.txt,并根据"运行条件"部分的描述填写内容.
+
+使用windows自带的"任务计划程序",设置每天定时启动,实现自动签到,自动预约.
+
 #### 注意事项:
-  ~~外网签到需要在"MySocket.cpp/Post()/upload"添加"X-Forwarded-For: 10.167.146.62\r\n"~~
-  
+
+  ~~外网签到需要在"MySocket.cpp/Post()/upload"添加"X-Forwarded-For: 10.167.146.62\r\n"~~  
   ~~(+ "X-Forwarded-For: 10.167.146.62\r\n")~~
-  
   ~~方法来源于:~~
-  
   ~~//https://github.com/iozephyr/UJN-Lib-Seat-API~~
-  
   ~~原issue链接:~~
-  
   ~~//https://github.com/iozephyr/UJN-Lib-Seat-API/issues/17~~
-  
   ~~(未经验证)~~
   
-  外网签到功能经测试失效,可能服务器修改了验证方式.
+  #### 外网签到功能经测试失效,可能服务器修改了验证方式.
 
 #### 运行条件
 
