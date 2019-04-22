@@ -78,7 +78,7 @@ Windows All
 当然,如果你习惯带着电脑去图书馆,用这个程序可以省去打开APP签到的麻烦.
 ###### 如果你有一部闲置的安卓手机,可以试试我的另一个项目[Android_UJN](https://github.com/cym2018/Android_UJN)
 #### 日志部分
-对多数(全部!(小声逼逼))情况的返回格式自动处理,确保日志文件的可读性.
+对~~所有~~多数类型的返回格式自动处理,确保日志文件的可读性.
 #### 注明出处
 服务器返回内容的格式转换部分来自[zhangxueyang1的文章:c++ utf8与std::string字符编码转换](https://blog.csdn.net/zhangxueyang1/article/details/54178195)
 
@@ -90,7 +90,7 @@ Windows All
 ## 其他
 出现任何问题,欢迎发邮件[联系我](cym2018.xyz@qq.com).
 
-PS:我写的MySocket类,是真的牛批(自我陶醉).
+PS:~~我写的MySocket类,是真的牛批~~(算了不说了).
 # 附录:
 ###### data.txt样例
 ```
