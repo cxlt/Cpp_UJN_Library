@@ -9,23 +9,23 @@
 网上的Python占座脚本,看不懂,不会用,版本不兼容?
 ## 看到这里,你来对了
 Cpp_UJN_Library:一个自动预约第二天座位的程序.
-###### 重要的提示:程序预约的是(((第二天)))的座位
+###### 重要提示:程序预约的是★第二天★的座位!
 # 怎么用?
 ## 安装
 #### 运行环境
 Windows All
 #### 获取
-点击链接下载
+为了防止出现莫名其妙的错误,把32位,64位,Debug版,Release版都上传了一遍,推荐程度从前往后递减
 
-[预定座位](https://raw.githubusercontent.com/cym2018/Cpp_UJN_Library/master/app/library.exe)
+预约: [Release_64](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Library_Release_X64.exe) [[Release_32](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Library_Release_X32.exe) [Debug_64](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Library_Debug_X64.exe) [Debug_32](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Library_Debug_X32.exe) 
 
-[签到](https://raw.githubusercontent.com/cym2018/Cpp_UJN_Library/master/app/checkin.exe)
+签到: [Release_64](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Checkin_Release_X64.exe) [[Release_32](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Checkin_Release_X32.exe) [Debug_64](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Checkin_Debug_X64.exe) [Debug_32](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Checkin_Debug_X32.exe) 
 ## 使用
 #### 打开Library.exe所在的文件夹,新建文本文档,命名为"data.txt".
 #### 打开data.txt,按照以下格式填写
-###### 重要的提示:data.txt内含空格,空行,可能会出错.
+###### 重要提示:data.txt内不能有空格,空行,否则会出错!
 ```
-第1行:此行不会对程序的运行产生任何影响,可以保存预约信息的中文描述,方便查改
+第1行:此行不会对程序的运行产生任何影响,用于保存预约信息的中文描述(换句话说,给人看的)
 第2行:学号
 第3行:密码
 第4行:座位id  (参见"获取座位id的方法")
@@ -39,7 +39,7 @@ Windows All
 
 这就是程序所有的功能了.
 
-但是,如果你起床晚,甚至双击鼠标都嫌麻烦,那么,请往下看:
+但是,如果你不喜欢早起,而且难以忍受双击鼠标的艰辛,那么,往下看:
 #### 定时任务
 ###### 以新建每天早上5:00:30自动执行library.exe的计划任务为例.
 ```
@@ -64,7 +64,7 @@ Windows All
 	18.选中"唤醒计算机运行此任务"
 19.单击确定
 ```
-###### 重要的提示:电脑关机时无法执行计划任务.
+###### 重要提示:电脑关机时无法执行计划任务!
 ## 其他值得注意的信息
 #### 关于签到功能
 签到需要连接图书馆的wifi"Lib_Student".
@@ -80,9 +80,9 @@ Windows All
 
 网络编程部分来自[微软文档](https://docs.microsoft.com/zh-cn/windows/desktop/WinSock/windows-sockets-start-page-2)
 #### 许可
-如被抄袭,不胜感激
+如被抄袭,诚惶诚恐
 ## 已知问题
-1.预约时间早于服务器规定时间,程序无法自动处理返回的消息,生成一段很长的日志.
+无(wo xie zhe tiao shi wei le rang zi ji kai xin de,bi xu xie wu,you ye shi wu)
 ## 其他
 出现任何问题,欢迎发邮件[联系我](cym2018.xyz@qq.com).
 
