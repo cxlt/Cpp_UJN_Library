@@ -35,6 +35,8 @@ Windows All
 ```
 [_获取座位id的方法_](http://www.cym2019.xyz/library.jsp)
 
+看不懂?[点我](https://github.com/cym2018/Cpp_UJN_Library/blob/master/README.md#datatxt样例)
+
 填写完data.txt,双击运行library.exe,程序就可以正确的执行预约功能了.
 
 这就是程序所有的功能了.
