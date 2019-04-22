@@ -6,7 +6,7 @@
 
 用多个账号占座,一不留神就失约?
 
-网上的Python占座脚本,看不懂,不会用,版本不兼容?
+网上的Python脚本,看不懂,不会用,版本不兼容?
 ## 看到这里,你来对了
 Cpp_UJN_Library:一个自动预约第二天座位的程序.
 ###### 重要提示:程序预约的是★第二天★的座位!
@@ -15,11 +15,11 @@ Cpp_UJN_Library:一个自动预约第二天座位的程序.
 #### 运行环境
 Windows All
 #### 获取
-为了防止出现莫名其妙的错误,把32位,64位,Debug版,Release版都上传了一遍,推荐程度从前往后递减
+为了防止莫名其妙的错误,32位,64位,Debug版,Release版都上传了,推荐程度从前往后递减,不能运行,就换一个试试
 
-预约: [Release_64](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Library_Release_X64.exe) [[Release_32](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Library_Release_X32.exe) [Debug_64](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Library_Debug_X64.exe) [Debug_32](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Library_Debug_X32.exe) 
+预约: [Release_64](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Library_Release_X64.exe) [Release_32](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Library_Release_X32.exe) [Debug_64](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Library_Debug_X64.exe) [Debug_32](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Library_Debug_X32.exe) 
 
-签到: [Release_64](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Checkin_Release_X64.exe) [[Release_32](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Checkin_Release_X32.exe) [Debug_64](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Checkin_Debug_X64.exe) [Debug_32](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Checkin_Debug_X32.exe) 
+签到: [Release_64](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Checkin_Release_X64.exe) [Release_32](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Checkin_Release_X32.exe) [Debug_64](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Checkin_Debug_X64.exe) [Debug_32](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Checkin_Debug_X32.exe) 
 ## 使用
 #### 打开Library.exe所在的文件夹,新建文本文档,命名为"data.txt".
 #### 打开data.txt,按照以下格式填写
