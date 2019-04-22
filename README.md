@@ -37,13 +37,13 @@ Windows All
 
 看不懂?[点我](https://github.com/cym2018/Cpp_UJN_Library/blob/master/README.md#datatxt样例)
 
-填写完data.txt,双击运行library.exe,程序就可以正确的执行预约功能了.
+填写完data.txt,双击运行library.exe,程序将会遍历每个预约信息.
 
-程序的运行结果,可以在log.txt查看.
+运行结果可以在log.txt查看.
 
 这就是程序所有的功能了.
 
-但是,如果你不喜欢早起,而且难以忍受双击鼠标的艰辛,那么,往下看:
+但是,如果你早上起起不来,或者难以忍受每天双击鼠标的艰辛,那么,往下看:
 ## 进阶篇——自动运行
 ###### 以新建每天早上5:00:30自动执行library.exe的计划任务为例.
 ```
