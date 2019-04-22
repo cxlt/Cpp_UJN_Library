@@ -87,7 +87,7 @@ Windows All
 如被抄袭,诚惶诚恐
 ## 已知问题
 无(wo xie zhe tiao shi wei le rang zi ji kai xin de,bi xu xie wu,you ye shi wu)
-## 其他
+## 还有
 出现任何问题,欢迎发邮件[联系我](cym2018.xyz@qq.com).
 
 PS:~~我写的MySocket类,是真的牛批~~(算了不说了).
