@@ -1,48 +1,50 @@
-# 本项目用于济南大学图书馆预约和签到
-## app/checkin.exe 用于签到
-## app/library.exe 用于预约
-## 使用方式:
-#### <仅支持windows>
+# Cpp_UJN_Library
 
-下载app目录下的两个可执行文件.
+_一个由C++编写的用于预约济南大学图书馆座位的可执行程序_
 
-新建data.txt,并根据"运行条件"部分的描述填写内容.
+## 说明
 
-使用windows自带的"任务计划程序",设置每天定时启动,实现自动签到,自动预约.
+早上睁眼第一件事情就是打开APP占座,却发现喜欢的座位被别人占走了?
 
-#### 注意事项:
+借了多个账号占座,一不留神就失约?
 
-  ~~外网签到需要在"MySocket.cpp/Post()/upload"添加"X-Forwarded-For: 10.167.146.62\r\n"~~  
-  ~~(+ "X-Forwarded-For: 10.167.146.62\r\n")~~
-  ~~方法来源于:~~
-  ~~//https://github.com/iozephyr/UJN-Lib-Seat-API~~
-  ~~原issue链接:~~
-  ~~//https://github.com/iozephyr/UJN-Lib-Seat-API/issues/17~~
-  ~~(未经验证)~~
-  
-  #### 外网签到功能经测试失效,可能服务器修改了验证方式.
+网上的占座脚本都是Python编写的,学习太麻烦?
 
-#### 运行条件
+Cpp_UJN_Library可以帮你.
 
-程序运行需要读取文件目录下的"data.txt"
-文件格式如下:(N为第几个账号,0,1,2,3,4…)
+## 安装
 
-6N+1行:注释
+[预定座位](https://raw.githubusercontent.com/cym2018/Cpp_UJN_Library/master/app/library.exe)
 
-6N+2行:学号
+[签到](https://raw.githubusercontent.com/cym2018/Cpp_UJN_Library/master/app/checkin.exe)
 
-6N+3行:密码
+## 使用
 
-6N+4行:座位代码
+在你保存可执行程序的文件夹下新建一个空白文本文档,命名为"data.txt",这个文件用于保存预约座位需要的信息
 
-6N+5行:开始时间
+### "data.txt"文件格式
+__
 
-6N+6行:结束时间
+第1行:此行不会对程序的运行产生任何影响,可以保存预约信息的中文描述,方便查改
 
-#### 日志样例
+第2行:学号
 
-![image](https://github.com/cym2018/Cpp_UJN_Library/blob/master/app/log.jpg)
+第3行:密码
 
-#### data.txt样例
+第4行:座位id[获取座位id的方法]()
 
-![image](https://github.com/cym2018/Cpp_UJN_Library/blob/master/app/data.jpg)
+第5行:开始时间(单位:分钟)
+
+第6行:结束时间
+
+第7行开始填写第2个预约信息,以此类推.
+
+##### 注:文件内含空行,空格,可能会出错.
+
+### 定时任务
+
+
+
+
+
+
