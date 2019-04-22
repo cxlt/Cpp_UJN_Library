@@ -43,7 +43,7 @@ Windows All
 
 这就是程序所有的功能了.
 
-但是,如果你早上起起不来,或者难以忍受每天双击鼠标的艰辛,那么,往下看:
+但是,如果你~~早上起不来~~学习太忙,那么,往下看:
 ## 进阶篇——自动运行
 ###### 以新建每天早上5:00:30自动执行library.exe的计划任务为例.
 ```
@@ -86,7 +86,7 @@ Windows All
 #### 许可
 如被抄袭,诚惶诚恐
 ## 已知问题
-无(~~wo xie zhe tiao shi wei le rang zi ji kai xin de,bi xu xie wu,you ye shi wu~~)
+无(~~xie zhe tiao ke yi rang zi ji kai xin,guan ta you mei you wen ti~~)
 ## 还有
 出现任何问题,欢迎发邮件[联系我](cym2018.xyz@qq.com).
 
