@@ -20,7 +20,7 @@ Windows All
 预约: [Release_64](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Library_Release_X64.exe) [Release_32](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Library_Release_X32.exe) [Debug_64](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Library_Debug_X64.exe) [Debug_32](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Library_Debug_X32.exe) 
 
 签到: [Release_64](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Checkin_Release_X64.exe) [Release_32](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Checkin_Release_X32.exe) [Debug_64](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Checkin_Debug_X64.exe) [Debug_32](https://github.com/cym2018/Cpp_UJN_Library/raw/master/File/Checkin_Debug_X32.exe) 
-## 使用
+## 使用时
 #### 打开Library.exe所在的文件夹,新建文本文档,命名为"data.txt".
 #### 打开data.txt,按照以下格式填写
 ###### 重要提示:data.txt内不能有空格,空行,否则会出错!
@@ -40,7 +40,7 @@ Windows All
 这就是程序所有的功能了.
 
 但是,如果你不喜欢早起,而且难以忍受双击鼠标的艰辛,那么,往下看:
-## 自动运行
+## 进阶篇——自动运行
 ###### 以新建每天早上5:00:30自动执行library.exe的计划任务为例.
 ```
 1.单击开始菜单或键盘上的Windows键
@@ -72,7 +72,7 @@ Windows All
 近期图书馆离馆禁止遗留物品,无法把电脑单独留在图书馆,所以自动签到功能废了.
 
 当然去图书馆时带着电脑,用这个程序可以省去打开APP签到的麻烦.
-###### 如果你有一部废弃的安卓手机的话可以试试我的另一个项目[Android_UJN](https://github.com/cym2018/Android_UJN)
+###### 如果你有一部闲置的安卓手机,可以试试我的另一个项目[Android_UJN](https://github.com/cym2018/Android_UJN)
 #### 日志部分
 对大部分类型的返回内容自动处理,确保日志文件的可读性.
 #### 注明出处
