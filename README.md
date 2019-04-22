@@ -1,18 +1,20 @@
 # Cpp_UJN_Library
 
-_一个由C++编写的用于预约济南大学图书馆座位的可执行程序_
+_由C++编写,用于济南大学图书馆预约座位的可执行程序_
 
 ## 说明
 
-早上睁眼第一件事情就是打开APP占座,却发现喜欢的座位被别人占走了?
+早上睡醒,先打开APP占座,喜欢的座位还是被别人抢走了?
 
 借了多个账号占座,一不留神就失约?
 
-网上的占座脚本都是Python编写的,学习太麻烦?
+网上的Python占座脚本,看不懂,不会用,版本不兼容?
 
-Cpp_UJN_Library可以帮你.
+#### Cpp_UJN_Library可以帮你.
 
 ## 安装
+
+点击链接下载
 
 [预定座位](https://raw.githubusercontent.com/cym2018/Cpp_UJN_Library/master/app/library.exe)
 
